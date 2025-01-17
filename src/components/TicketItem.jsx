@@ -14,6 +14,8 @@ const TicketItem = ({ ticket, dispatch }) => {
     });
   };
 
+  
+
   const handleEdit = () => {
     dispatch({
       type: "SET-EDITING-TICKET",

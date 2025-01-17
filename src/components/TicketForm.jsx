@@ -44,6 +44,13 @@ const TicketForm = ({ dispatch, editingTicket }) => {
     clearForm();
   };
 
+  const cancelEdit = ()=>{
+  dispatch({
+      type: "CLEAR-EDITING-TICKET",
+    });
+    clearForm();
+  }
+
   return (
     <div>
       <form action="" onSubmit={handleFormSubmit}>
@@ -94,7 +101,11 @@ const TicketForm = ({ dispatch, editingTicket }) => {
 
         <button type="submit" className="button">
           Submit
-        </button>
+        </button> 
+
+        {editingTicket && <button className="button" onClick={cancelEdit}>
+          Cancel Edit
+        </button> }
       </form>
     </div>
   );
